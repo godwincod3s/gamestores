@@ -23,7 +23,7 @@ A minimal, production-ready starter template for a Headless WordPress + WooComme
 
 
 ```
-huulostore-starter/
+gamestores/
 ├─ .env.example
 ├─ package.json
 ├─ next.config.js
