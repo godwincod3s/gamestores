@@ -1,6 +1,7 @@
 import vars from '@/globalvars'
 import Header from '@/components/Header';
 import {  NavbarButton } from "@/components/ui/resizable-navbar";
+import Categories from '@/components/Categories';
 
 const { name } = vars;
 
@@ -23,6 +24,7 @@ export default function Home() {
             </div>
         </section>
 
+        <Categories />
     </>
   );
 }
