@@ -16,6 +16,9 @@ import {
 const navItems = [
   { name: "Products", link: "/products" },
   { name: "Blog", link: "/blog" },
+  { name: "Contact", link: "/products" },
+  { name: "AboutUs", link: "/blog" },
+//   { name: "AboutUs", link: "/blog" },
 ];
 const {name} = vars;
 
