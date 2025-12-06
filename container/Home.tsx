@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <>
-        <Header />
+        <Header className="px-4 lg:px-0" />
 
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-md">

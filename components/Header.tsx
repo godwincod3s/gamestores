@@ -19,11 +19,11 @@ const navItems = [
 ];
 const {name} = vars;
 
-export default function Header() {
+export default function Header(props: { className: string }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-      <Navbar>
+      <Navbar className={props.className}>
         <NavBody>
           <Link href="/" className="relative z-20 mr-4 flex items-center px-2 py-1">
             <span className="font-bold text-black dark:text-white">GameStores</span>

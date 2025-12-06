@@ -196,7 +196,7 @@ export default function Carousel({ slides }: CarouselProps) {
         ))}
       </ul>
 
-      <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
+            <div className="absolute flex justify-center w-full top-[calc(100%+1rem)] z-30 pointer-events-auto">
         <CarouselControl
           type="previous"
           title="Go to previous slide"

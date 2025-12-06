@@ -36,7 +36,7 @@ export default function Categories() {
       <div className="max-w-7xl mx-auto mb-16">
         <div className="flex flex-row items-center justify-center gap-4 mb-8">
           <LayoutTextFlip
-            text="Browse Products in"
+            text="Browse in"
             words={["Playstation", "Xbox", "VR", "Nintendo"]}
             duration={3000}
           />

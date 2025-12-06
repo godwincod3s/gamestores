@@ -36,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="p-6">{children}</main>
+        <main className="lg:p-6 p-2">{children}</main>
         
         {/* Floating Dock - fixed at bottom center */}
         <div className="fixed inset-x-0 bottom-6 flex justify-center z-50 pointer-events-none">
