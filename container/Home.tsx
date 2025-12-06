@@ -11,7 +11,7 @@ export default function Home() {
         <Header />
 
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-sm">
+        <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-md">
             <div className="text-center text-white px-4">
             <h1 className="text-5xl font-bold mb-4">Welcome to <span className='capitalize'>{name}</span> </h1>
             <p className="text-xl mb-8 text-gray-300">
