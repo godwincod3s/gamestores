@@ -169,3 +169,27 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Infinite scroller animation used by components/ui/infinite-moving-cards.tsx */
+.scroller .animate-scroll {
+  animation: scroll var(--animation-duration, 40s) linear infinite;
+  animation-direction: var(--animation-direction, forwards);
+  will-change: transform;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Optional: make hover pause (already applied in component via hover:[animation-play-state:paused]) */
+.scroller:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+/* Make sure scrolling children won't wrap (should be fine with current flex setup) */
+.scroller ul { display: flex; flex-wrap: nowrap; }

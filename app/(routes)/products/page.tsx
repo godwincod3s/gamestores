@@ -1,23 +1,7 @@
 import ProductCard from '@/components/ProductCard';
+import { fetchWooProducts } from '@/lib/wooQueries';
 
 export const revalidate = 60; // ISR
-
-// WooCommerce REST API helper
-async function fetchWooProducts() {
-    const url = `${process.env.WC_API_URL}/wp-json/wc/v3/products?per_page=10`;
-    const response = await fetch(url, {
-    headers: {
-        Authorization: `Basic ${btoa(`${process.env.WC_CONSUMER_KEY}:${process.env.WC_CONSUMER_SECRET}`)}`,
-    },
-    });
-
-    if (!response.ok) {
-    console.error('Failed to fetch WooCommerce products', await response.text());
-    return [];
-    }
-
-    return response.json();
-}
 
 
 export default async function ProductsPage() {

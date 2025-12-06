@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 export async function generateStaticParams() {
     // fetching slugs optionally to pre-render
@@ -30,11 +30,16 @@ export default async function ProductPage({ params }: { params: { id: string } }
 
     if (!wooProduct) return <p>Product not found</p>;
 
+    const src_url: string = wooProduct.images?.[0]?.thumbnail || 
+                  wooProduct.images?.[0]?.src || 
+                  wooProduct.image?.sourceUrl || 
+                  '/placeholder.png';
+
 
     return (
         <div>
             <h1 className="text-2xl font-bold">{wooProduct.name}</h1>
-            <img src={wooProduct.image?.sourceUrl} alt={wooProduct.name} className="w-full max-w-md" />
+            <Image src={src_url} alt={wooProduct.name} width={100} height={100} className="w-full max-w-md" />
             <div className="mt-4" dangerouslySetInnerHTML={{ __html: wooProduct.description }} />
             <p className="mt-2 font-semibold">Price: {wooProduct.price}</p>
         </div>
