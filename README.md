@@ -48,20 +48,3 @@ gamestores/
 
 ---
 
-
-## .env.example
-
-
-```
-# WordPress GraphQL endpoint
-WP_GRAPHQL_ENDPOINT=https://gamestores.com/graphql
-
-
-# Optional - JWT token if you pre-generate server-side tokens
-WP_JWT_TOKEN=
-
-
-# For server-side authenticated requests
-WP_JWT_USERNAME=
-WP_JWT_PASSWORD=
-```
