@@ -1,4 +1,4 @@
-// app/blog/page.tsx
+// app/blog/page.tsx followin pointer card
 import { GET_POSTS } from '@/lib/queries';
 import { getClient } from '@/lib/wpClient';
 
