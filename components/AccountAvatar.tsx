@@ -10,7 +10,7 @@ export default function AccountAvatar({
 }: {
   name?: string;
   email?: string;
-  avatar?: string;
+  avatar: string;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);

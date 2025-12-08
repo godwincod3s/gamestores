@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { easeInOut } from "motion/react";
 
 /**
  * Aceternity-like Sidebar
@@ -15,6 +16,10 @@ import { cn } from "@/lib/utils";
  * - Active link: left accent bar + highlight
  * - Tooltip on collapsed icons (animated)
  */
+type DivProps = React.HTMLAttributes<HTMLDivElement> & {
+  className?: string;
+  children?: React.ReactNode;
+};
 
 /* ---------- context ---------- */
 interface Links {
@@ -75,14 +80,14 @@ export const Sidebar = ({ children, open, setOpen, animate }: {
 /* ---------- constants ---------- */
 const COLLAPSED_WIDTH = 92; // px
 const EXPANDED_WIDTH = 280; // px
-const TRANSITION = { duration: 0.22, ease: "easeInOut" };
+const TRANSITION = { duration: 0.22, ease: easeInOut };
 
 /* ---------- Desktop Sidebar ---------- */
 export const DesktopSidebar = ({
   className,
   children,
   ...props
-}: React.ComponentProps<typeof motion.div>) => {
+}: DivProps) => {
   const { open, setOpen, animate } = useSidebar();
 
   return (
@@ -97,7 +102,7 @@ export const DesktopSidebar = ({
       transition={TRANSITION}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      {...props}
+      {...(props as any)}
       style={{ minWidth: COLLAPSED_WIDTH }}
     >
       <div className="h-full overflow-hidden flex flex-col">
@@ -112,7 +117,7 @@ export const MobileSidebar = ({
   className,
   children,
   ...props
-}: React.ComponentProps<"div">) => {
+}: DivProps ) => {
   const { open, setOpen } = useSidebar();
 
   return (
@@ -242,11 +247,11 @@ export const SidebarLink = ({
 };
 
 /* ---------- SidebarBody wrapper (optional) ---------- */
-export const SidebarBody = (props: React.ComponentProps<typeof motion.div>) => {
+export const SidebarBody = (props: DivProps) => {
   return (
     <>
       <DesktopSidebar {...props} />
-      <MobileSidebar {...(props as React.ComponentProps<"div">)} />
+      <MobileSidebar {...(props as DivProps )} />
     </>
   );
 };

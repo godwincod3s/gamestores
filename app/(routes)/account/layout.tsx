@@ -80,7 +80,7 @@ export default async function AccountLayout({
           {/* Bottom: account avatar & actions */}
           <div className="px-3 py-4 border-t">
             <AccountAvatar
-              name={user?.display_name || user?.username}
+              name={user?.display_name || user?.username || ''}
               email={user?.email}
               avatar={avatar}
             />
@@ -112,7 +112,7 @@ export default async function AccountLayout({
               {/* Bottom avatar / logout */}
               <div className="px-2 pt-4 border-t">
                 <AccountAvatar
-                  name={user?.display_name || user?.username}
+                  name={user?.display_name || user?.username || ''}
                   email={user?.email}
                   avatar={avatar}
                 />
