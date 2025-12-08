@@ -4,10 +4,13 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import {
-  IconBrandGithub,
+  IconBrandDiscord,
   IconBrandGoogle,
   IconBrandOnlyfans,
 } from "@tabler/icons-react";
+import vars from "@/globalvars"
+
+const { name: siteName } = vars;
 
 export default function SignupFormDemo() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -17,10 +20,10 @@ export default function SignupFormDemo() {
   return (
     <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
       <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
-        Welcome to Aceternity
+        Welcome to {siteName}
       </h2>
       <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-        Login to aceternity if you can because we don&apos;t have a login flow
+        Signup to {siteName} if you can because we don&apos;t have your login details
         yet
       </p>
 
@@ -44,11 +47,11 @@ export default function SignupFormDemo() {
           <Input id="password" placeholder="••••••••" type="password" />
         </LabelInputContainer>
         <LabelInputContainer className="mb-8">
-          <Label htmlFor="twitterpassword">Your twitter password</Label>
+          <Label htmlFor="confirmpassword">Confirm password</Label>
           <Input
-            id="twitterpassword"
+            id="confirmpassword"
             placeholder="••••••••"
-            type="twitterpassword"
+            type="confirmpassword"
           />
         </LabelInputContainer>
 
@@ -67,9 +70,9 @@ export default function SignupFormDemo() {
             className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
             type="submit"
           >
-            <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+            <IconBrandDiscord className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
             <span className="text-sm text-neutral-700 dark:text-neutral-300">
-              GitHub
+              Discord
             </span>
             <BottomGradient />
           </button>
@@ -121,3 +124,5 @@ const LabelInputContainer = ({
     </div>
   );
 };
+
+// NUsed
