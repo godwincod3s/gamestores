@@ -22,7 +22,7 @@ export default function ProductCard({ product }: { product: any }) {
         href={`/product/${product.id}`}
         className="text-sm underline mt-2 block"
       >
-        View
+        Vie
       </Link>
     </div>
   );

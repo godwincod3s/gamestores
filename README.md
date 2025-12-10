@@ -47,4 +47,10 @@ gamestores/
 
 
 ---
-
+https://ui.aceternity.com/components/expandable-card
+https://ui.aceternity.com/components/focus-cards
+https://ui.aceternity.com/components/3d-card-effect
+https://ui.aceternity.com/components/stateful-button
+blog ->
+https://ui.aceternity.com/components/bento-grid
+https://ui.aceternity.com/components/3d-marquee

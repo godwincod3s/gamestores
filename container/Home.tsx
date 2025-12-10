@@ -4,6 +4,7 @@ import {  NavbarButton } from "@/components/ui/resizable-navbar";
 import Categories from '@/components/Categories';
 import Features from '@/components/Features';
 import LatestProducts from '@/components/LatestProducts';
+import RecentProducts from '@/components/RecentProducts'
 
 const { name } = vars;
 
@@ -25,6 +26,7 @@ export default function Home() {
             </NavbarButton>
             </div>
         </section>
+        <RecentProducts />
         <Features />
         <Categories />
         <LatestProducts perPage={12} />

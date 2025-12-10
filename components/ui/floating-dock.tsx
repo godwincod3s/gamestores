@@ -9,7 +9,8 @@ import {
   useTransform,
 } from "motion/react";
 
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
+import {SearchModal} from "@/components/ui/search-modal"
 
 export const FloatingDock = ({
   items,
@@ -20,10 +21,13 @@ export const FloatingDock = ({
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
+  const [open, setOpen] = useState(false)
+
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      <SearchModal open={open} onClose={() => setOpen(false)} />
+      <FloatingDockDesktop setOpen={() => setOpen(true)} items={items} className={desktopClassName} />
+      <FloatingDockMobile setOpen={() => setOpen(true)} items={items} className={mobileClassName} />
     </>
   );
 };
@@ -35,9 +39,11 @@ export const FloatingDock = ({
 const FloatingDockMobile = ({
   items,
   className,
+  setOpen
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
+  setOpen: () => void
 }) => {
   let mouseX = useMotionValue(Infinity);
 
@@ -56,9 +62,15 @@ const FloatingDockMobile = ({
         className,
       )}
     >
-      {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
-      ))}
+      {items.map((item) => { 
+          if(item.title == "Search"){
+            return <div className="cursor-pointer" onClick={setOpen} key={item.title} ><IconContainer href="" mouseX={mouseX} key={item.title} title={item.title} icon={item.icon} /></div>
+          }
+          return (
+            <IconContainer mouseX={mouseX} key={item.title} {...item} />
+          )
+      }
+      )}
     </motion.div>
   );
 };
@@ -66,9 +78,12 @@ const FloatingDockMobile = ({
 const FloatingDockDesktop = ({
   items,
   className,
+  setOpen
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
+  // setOpen: () => React.Dispatch<React.SetStateAction<boolean>>;
+  setOpen: () => void
 }) => {
   let mouseX = useMotionValue(Infinity);
   return (
@@ -80,9 +95,16 @@ const FloatingDockDesktop = ({
         className,
       )}
     >
-      {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
-      ))}
+      {items.map((item) => {
+          if(item.title == "Search"){
+            return <div className="cursor-pointer" key={item.title}  onClick={setOpen}><IconContainer href="" mouseX={mouseX} title={item.title} icon={item.icon} /></div>
+          }
+
+          return (
+          <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        )
+      }
+      )}
     </motion.div>
   );
 };

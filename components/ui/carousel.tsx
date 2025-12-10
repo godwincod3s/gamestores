@@ -172,6 +172,16 @@ export default function Carousel({ slides }: CarouselProps) {
     }
   };
 
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      handleNextClick()
+    }, 2500)
+
+    return () => {
+      clearInterval(autoSlide)
+    }
+  })
+
   const id = useId();
 
   return (

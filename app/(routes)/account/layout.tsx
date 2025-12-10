@@ -52,6 +52,7 @@ export default async function AccountLayout({
     { label: "Addresses", href: "/account/addresses", icon: <IconMapPin className="w-5 h-5" /> },
     { label: "Payment Methods", href: "/account/payment-methods", icon: <IconCreditCard className="w-5 h-5" /> },
     { label: "Wishlist", href: "/account/wishlist", icon: <IconHeart className="w-5 h-5" /> },
+    { label: "Cart", href: "/account/cart", icon: <IconShoppingCart className="w-5 h-5" /> },
     { label: "Account Details", href: "/account/account-details", icon: <IconUser className="w-5 h-5" /> },
   ];
 

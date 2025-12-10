@@ -24,14 +24,14 @@ export default async function LatestProducts({
     <section className="py-16 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-2xl font-bold">Most Recent Products</h2>
+          <h2 className="text-2xl font-bold">Products on Flash Sale!</h2>
           <p className="text-sm text-neutral-500">Updated automatically</p>
         </div>
 
         <InfiniteMovingCards
           items={items}
           direction="left"
-          speed="normal"
+          speed="slow"
           pauseOnHover={true}
           className="px-2"
         />
