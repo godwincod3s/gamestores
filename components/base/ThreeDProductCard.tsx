@@ -155,12 +155,12 @@ export default function ThreeDProductCard({ product }: { product: any }) {
             <Image
               src={imgSrc}
               alt={product.name}
-              width={400}
-              height={300}
-              className="object-cover w-full h-40 md:h-48 rounded-md"
+              width={250}
+              height={250}
+              className="object-cover w-full h-30 md:h-48 rounded-md"
             />
           ) : (
-            <div className="h-48 w-full rounded-md bg-neutral-200 dark:bg-neutral-800" />
+            <div className="h-30 md:h-48 w-full rounded-md bg-neutral-200 dark:bg-neutral-800" />
           )}
         </CardItem>
         <CardItem
@@ -168,7 +168,9 @@ export default function ThreeDProductCard({ product }: { product: any }) {
             className="text-xl font-bold text-neutral-600 dark:text-white overflow-hidden"
             >
             <h3 className="text-lg font-semibold text-neutral-900 dark:text-white truncate whitespace-nowrap overflow-hidden text-ellipsis">
-                {product.name}
+                {product.name.length > 25
+                ? product.name.slice(0, 23).trimEnd() + "..."
+                : product.name}
             </h3>
         </CardItem>
         <CardItem
@@ -181,13 +183,13 @@ export default function ThreeDProductCard({ product }: { product: any }) {
             onClick={addToCart}
             disabled={adding}
             className={cn(
-              "rounded-md bg-gradient-to-br from-black to-neutral-600 py-2 px-1 lg:px-3 lg:py-2 text-sm font-semibold text-white shadow-sm hover:shadow-md transition disabled:opacity-60",
+              "mr-2 rounded-md bg-gradient-to-br from-black to-neutral-600 py-2 px-1 lg:px-3 lg:py-2 text-xs font-semibold text-white shadow-sm hover:shadow-md transition disabled:opacity-60",
               "dark:bg-zinc-800 dark:text-white"
             )}
           >
-            <div className="inline-flex items-center gap-2">
+            <div className="flex items-center gap-1 lg:gap-2">
               {adding ? "Adding" : "Add"} 
-              <IconShoppingCart className="w-4 h-4" />
+              <IconShoppingCart className="w-3 h-3 lg:w-4 lg:h-4" />
             </div>
           </Button>
 
@@ -195,7 +197,7 @@ export default function ThreeDProductCard({ product }: { product: any }) {
             <span className="absolute inset-0 overflow-hidden rounded-full">
               <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
             </span>
-            <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-100 py-0.5 px-4 ring-1 ring-white/10 ">
+            <div className="relative flex pl-2 space-x-2 items-center z-10 rounded-full bg-zinc-100 py-0.5 px-4 ring-1 ring-white/10 ">
               <span>{`View`}</span>
               <svg
                 width="16"
