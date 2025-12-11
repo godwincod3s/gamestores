@@ -167,7 +167,7 @@ export default function ThreeDProductCard({ product }: { product: any }) {
             translateZ="50"
             className="text-xl font-bold text-neutral-600 dark:text-white overflow-hidden"
             >
-            <h3 className="text-lg font-semibold text-neutral-900 dark:text-white truncate whitespace-nowrap overflow-hidden text-ellipsis">
+            <h3 className="text-sm lg:text-lg font-semibold text-neutral-900 dark:text-white truncate whitespace-nowrap overflow-hidden text-ellipsis">
                 {product.name.length > 25
                 ? product.name.slice(0, 23).trimEnd() + "..."
                 : product.name}
@@ -175,7 +175,7 @@ export default function ThreeDProductCard({ product }: { product: any }) {
         </CardItem>
         <CardItem
           translateZ="50"
-          className="text-lg font-bold text-emerald-600 dark:text-white">
+          className="text-sm lg:text-lg font-bold text-emerald-600 dark:text-white">
             {formatCurrency(+priceDisplay || 0, 'NGN')}
         </CardItem>
         <div className="flex justify-between items-center mt-10">
