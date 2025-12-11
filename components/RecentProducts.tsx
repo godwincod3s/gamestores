@@ -23,7 +23,7 @@ export default async function LatestProducts({
     <div className="py-16 mx-auto px-4 sm:px-6 lg:px-20">
       <h2 className="mb-8 lg:px-24 text-2xl font-bold">Most Recent Products</h2>
 
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap justify-center gap-2 lg:gap-4">
         {products.slice(0, 8).map((product: any, idx: number) => {
           return <ThreeDProductCard product={product} key={idx} />
         })}

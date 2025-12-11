@@ -64,7 +64,7 @@ const FloatingDockMobile = ({
     >
       {items.map((item) => { 
           if(item.title == "Search"){
-            return <div className="cursor-pointer" onClick={setOpen} key={item.title} ><IconContainer href="" mouseX={mouseX} key={item.title} title={item.title} icon={item.icon} /></div>
+            return <div className="cursor-pointer" onClick={setOpen} key={item.title} ><IconContainer href="#" mouseX={mouseX} key={item.title} title={item.title} icon={item.icon} /></div>
           }
           return (
             <IconContainer mouseX={mouseX} key={item.title} {...item} />
@@ -97,7 +97,7 @@ const FloatingDockDesktop = ({
     >
       {items.map((item) => {
           if(item.title == "Search"){
-            return <div className="cursor-pointer" key={item.title}  onClick={setOpen}><IconContainer href="" mouseX={mouseX} title={item.title} icon={item.icon} /></div>
+            return <div className="cursor-pointer" key={item.title}  onClick={setOpen}><IconContainer href="#" mouseX={mouseX} title={item.title} icon={item.icon} /></div>
           }
 
           return (

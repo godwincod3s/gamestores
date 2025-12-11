@@ -181,7 +181,7 @@ export default function ThreeDProductCard({ product }: { product: any }) {
             onClick={addToCart}
             disabled={adding}
             className={cn(
-              "rounded-md bg-gradient-to-br from-black to-neutral-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:shadow-md transition disabled:opacity-60",
+              "rounded-md bg-gradient-to-br from-black to-neutral-600 py-2 px-1 lg:px-3 lg:py-2 text-sm font-semibold text-white shadow-sm hover:shadow-md transition disabled:opacity-60",
               "dark:bg-zinc-800 dark:text-white"
             )}
           >
