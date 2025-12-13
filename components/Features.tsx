@@ -10,7 +10,7 @@ import {
 } from "@tabler/icons-react";
 import vars from "@/globalvars";
 
-const {name} = vars;
+const {app_name} = vars;
 
 const features = [
   {
@@ -52,7 +52,7 @@ export default function Features() {
       <div className="max-w-6xl mx-auto mb-16">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Why Choose <span className="capitalize">{name}</span>
+            Why Choose <span className="capitalize">{app_name}</span>
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             Experience the ultimate gaming shopping destination with features

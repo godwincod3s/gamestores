@@ -10,7 +10,7 @@ import {
 } from "@tabler/icons-react";
 import vars from "@/globalvars"
 
-const { name: siteName } = vars;
+const { app_name } = vars;
 
 export default function SignupFormDemo() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,10 +20,10 @@ export default function SignupFormDemo() {
   return (
     <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
       <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
-        Welcome to {siteName}
+        Welcome to {app_name}
       </h2>
       <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-        Signup to {siteName} if you can because we don&apos;t have your login details
+        Signup to {app_name} if you can because we don&apos;t have your login details
         yet
       </p>
 

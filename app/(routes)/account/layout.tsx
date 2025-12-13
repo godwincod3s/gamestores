@@ -20,7 +20,7 @@ import {
 import Image from "next/image";
 import vars from "@/globalvars";
 
-const { name } = vars;
+const { app_name } = vars;
 
 export default async function AccountLayout({
   children,
@@ -65,7 +65,7 @@ export default async function AccountLayout({
           <div className="px-4 py-4 border-b">
             <a href="/" className="flex items-center gap-3">
               <Image src="/checkout-cart-12kb.webp" width={100} height={100} alt="Logo" className="w-8 h-8 hidden md:block" />
-              <span className="text-lg font-bold capitalize">{name}</span>
+              <span className="text-lg font-bold capitalize">{app_name}</span>
             </a>
           </div>
 
@@ -98,7 +98,7 @@ export default async function AccountLayout({
                 <div className="px-2 pb-4 border-b mb-4">
                   <a href="/" className="flex items-center gap-3">
                     <Image src="/checkout-cart-12kb.webp" width={100} height={100} alt="Logo" className="w-8 h-8" />
-                    <span className="text-lg font-bold capitalize">{name}</span>
+                    <span className="text-lg font-bold capitalize">{app_name}</span>
                   </a>
                 </div>
 

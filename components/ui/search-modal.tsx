@@ -7,7 +7,7 @@ import vars from "@/globalvars";
 import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
 import Image from "next/image"
 
-const { name: siteName } = vars
+const { app_name } = vars
 
 export function SearchModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [q, setQ] = useState("");
@@ -88,7 +88,7 @@ export function SearchModal({ open, onClose }: { open: boolean; onClose: () => v
                 className="flex-1 bg-transparent outline-none px-3 py-2 text-lg"
               /> */}
               <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl dark:text-white text-black">
-                Find Anything on <span className="capitalize">{siteName}</span>
+                Find Anything on <span className="capitalize">{app_name}</span>
               </h2>
               <PlaceholdersAndVanishInput
                 // value={q}
