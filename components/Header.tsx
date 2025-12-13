@@ -20,7 +20,7 @@ const navItems = [
   { name: "AboutUs", link: "/blog" },
 //   { name: "AboutUs", link: "/blog" },
 ];
-const {name} = vars;
+const {app_name} = vars;
 
 export default function Header(props: { className: string }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ export default function Header(props: { className: string }) {
       <Navbar className={props.className}>
         <NavBody>
           <Link href="/" className="relative z-20 mr-4 flex items-center px-2 py-1">
-            <span className="font-bold text-black dark:text-white">GameStores</span>
+            <span className="font-bold text-black dark:text-white">{app_name}</span>
           </Link>
           <NavItems items={navItems} onItemClick={() => setIsOpen(false)} />
           <NavbarButton href="/products" variant="primary">
@@ -40,7 +40,7 @@ export default function Header(props: { className: string }) {
         <MobileNav>
           <MobileNavHeader>
             <Link href="/" className="font-bold text-black dark:text-white Capitalize">
-              {name}
+              {app_name}
             </Link>
             <MobileNavToggle
               isOpen={isOpen}

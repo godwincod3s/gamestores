@@ -12,7 +12,7 @@ import vars from "@/globalvars";
 import { useRouter } from "next/navigation";
 import { MultiStepLoader } from "@/components/ui/multi-step-loader";
 
-const { name: siteName } = vars;
+const { app_name } = vars;
 
 export default function SignupFormDemo() {
   const router = useRouter();
@@ -136,13 +136,12 @@ export default function SignupFormDemo() {
 
       <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
         <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
-          Welcome to {siteName}
+          Welcome to {app_name}
         </h2>
         <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-          Sign up to {siteName} — create an account to manage orders, downloads,
+          Sign up to {app_name} — create an account to manage orders, downloads,
           and your profile.
         </p>
-
         <form className="my-8" onSubmit={handleSubmit} noValidate>
           <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
             <LabelInputContainer>
@@ -229,7 +228,7 @@ export default function SignupFormDemo() {
 
           <button
             className={cn(
-              "group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]",
+              "group/btn relative block h-10 w-full mb-4 rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]",
               loading ? "opacity-70 pointer-events-none" : ""
             )}
             type="submit"
@@ -238,6 +237,11 @@ export default function SignupFormDemo() {
             {loading ? "Creating account…" : "Sign up →"}
             <BottomGradient />
           </button>
+          <div>
+            <a href="/login" className="text-blue-600 underline">
+              already have an account
+            </a>
+          </div>
 
           <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
 

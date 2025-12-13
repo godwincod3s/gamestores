@@ -1,5 +1,5 @@
 const vars = {
-    name: 'gamestores'
+    app_name: 'gamestores'
 }
 
 export default vars

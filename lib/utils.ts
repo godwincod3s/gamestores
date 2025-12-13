@@ -15,3 +15,10 @@ export function formatCurrency(amount: number, curr: "NGN" | "EUR"){
       return (amount || 0).toLocaleString("en-US", { style: "currency", currency: "USD"} )
   }
 }
+
+export function stripHtml(html: string) {
+        return html.replace(/<\/?[^>]+(>|$)/g, "");
+      }
+export function removePTags(html: string) {
+  return html.replace(/<\/?p[^>]*>/gi, "").trim();
+}

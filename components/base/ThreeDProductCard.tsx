@@ -6,7 +6,7 @@ import {
   IconHeartFilled,
   IconShoppingCart,
 } from "@tabler/icons-react";
-import { cn, formatCurrency } from "@/lib/utils";
+import { cn, formatCurrency, stripHtml, removePTags } from "@/lib/utils";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Button } from "@/components/ui/stateful-button";
 import { useRouter} from "next/navigation"
@@ -114,13 +114,6 @@ export default function ThreeDProductCard({ product }: { product: any }) {
     
       const shortDesc =
         rawDesc.length > 60 ? removePTags(rawDesc).slice(0, 57).trimEnd() + "..." : rawDesc;
-    
-      function stripHtml(html: string) {
-        return html.replace(/<\/?[^>]+(>|$)/g, "");
-      }
-      function removePTags(html: string) {
-        return html.replace(/<\/?p[^>]*>/gi, "").trim();
-      }
 
     const imgSrc =
         product.images?.[0]?.src ||

@@ -3,7 +3,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import ProductScrollerCard from "@/components/base/ProductScrollerCard";
 import { fetchRecentProducts } from "@/lib/wooQueries";
 
-export default async function LatestProducts({
+export default async function FlashSale({
   perPage = 12,
 }: {
   perPage?: number;
