@@ -193,3 +193,12 @@ body {
 
 /* Make sure scrolling children won't wrap (should be fine with current flex setup) */
 .scroller ul { display: flex; flex-wrap: nowrap; }
+/* Hide scrollbar */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

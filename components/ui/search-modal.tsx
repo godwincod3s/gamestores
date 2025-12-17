@@ -67,7 +67,7 @@ export function SearchModal({ open, onClose }: { open: boolean; onClose: () => v
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/50 p-6 h-screen flex flex-col justify-center  items-center px-4"
+          className="fixed inset-0 z-50 bg-black/50 p-6 h-screen flex flex-col justify-center  items-center px-4 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden pt-50 md:pt-0"
         >
           <motion.div initial={{ y: -20 }} animate={{ y: 0 }} exit={{ y: -20 }} className="w-full max-w-3xl bg-white dark:bg-neutral-900 rounded-lg shadow-lg">
             <div className="text-right cursor-pointer">
