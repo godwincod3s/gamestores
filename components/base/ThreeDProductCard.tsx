@@ -62,13 +62,14 @@ export default function ThreeDProductCard({ product }: { product: any }) {
       //   body: JSON.stringify({ productId: product.id, quantity: 1 }),
       // });
       const resCart = await fetch(
-        `${process.env.NEXT_PUBLIC_WP_API_URL}/wp-json/wc/store/cart`,
+        `${process.env.NEXT_PUBLIC_WP_API_URL}/wp-json/wc/store/cart/`,
         {
           credentials: "include",
         }
       );
 
-      // const cart = await resCart.json();
+      const cart = await resCart.json();
+      console.log({ 'Cart to get token':cart });
       const cartToken = resCart.headers.get("Cart-Token");
       localStorage.setItem("cart_token", cartToken!);
 
