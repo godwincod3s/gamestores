@@ -69,9 +69,9 @@ export default function ThreeDProductCard({ product }: { product: any }) {
       );
 
       const cart = await resCart.json();
-      console.log({ 'Cart to get token':cart });
       const cartToken = resCart.headers.get("Cart-Token");
       localStorage.setItem("cart_token", cartToken!);
+      console.log({ cart, cartToken });
 
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_WP_API_URL}/wp-json/wc/store/cart/add-item`,
