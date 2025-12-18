@@ -61,6 +61,16 @@ export default function ThreeDProductCard({ product }: { product: any }) {
       //   headers: { "Content-Type": "application/json" },
       //   body: JSON.stringify({ productId: product.id, quantity: 1 }),
       // });
+      const resCart = await fetch(
+        `${process.env.NEXT_PUBLIC_WP_API_URL}/wp-json/wc/store/cart`,
+        {
+          credentials: "include",
+        }
+      );
+
+      // const cart = await resCart.json();
+      const cartToken = resCart.headers.get("Cart-Token");
+      localStorage.setItem("cart_token", cartToken!);
 
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_WP_API_URL}/wp-json/wc/store/cart/add-item`,
@@ -69,6 +79,7 @@ export default function ThreeDProductCard({ product }: { product: any }) {
           credentials: "include",
           headers: {
             "Content-Type": "application/json",
+            "Cart-Token": localStorage.getItem("cart_token")!,
           },
           body: JSON.stringify({
             id: product.id,
