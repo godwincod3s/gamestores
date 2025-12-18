@@ -35,9 +35,20 @@ export default function CartPage() {
   async function fetchCart() {
     setLoading(true);
     try {
-      const res = await fetch("/api/account/cart");
+      // const res = await fetch("/api/account/cart");
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_WP_API_URL}/wp-json/wc/store/cart`,
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            "Cart-Token": localStorage.getItem("cart_token")!,
+          }
+        }
+      );
       console.log("Cart fetch response:", res);
-      
+
       if (res.ok) {
         const json = await res.json();
         setItems(json.items || []);
