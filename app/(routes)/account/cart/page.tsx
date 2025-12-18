@@ -36,6 +36,8 @@ export default function CartPage() {
     setLoading(true);
     try {
       const res = await fetch("/api/account/cart");
+      console.log("Cart fetch response:", res);
+      
       if (res.ok) {
         const json = await res.json();
         setItems(json.items || []);

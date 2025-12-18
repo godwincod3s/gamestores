@@ -8,7 +8,9 @@ const WC_KEY = process.env.WC_CONSUMER_KEY;
 const WC_SECRET = process.env.WC_CONSUMER_SECRET;
 
 export default async function SearchPage({ searchParams }: { searchParams?: { q?: string } }) {
-  const q = (searchParams?.q || "").trim();
+  const { q } = await searchParams || { q: '' };
+  // const q = (searchParams?.q || "").trim();
+
   if (!q) {
     return (
       <div className="max-w-4xl mx-auto p-6">
@@ -62,7 +64,7 @@ export default async function SearchPage({ searchParams }: { searchParams?: { q?
             {posts.map((post: any) => (
               <a key={post.id} href={`/blog/${post.slug}`} className="block border rounded-md p-3 hover:shadow">
                 <div className="font-semibold">{post.title.rendered ?? post.title}</div>
-                <div className="text-sm text-neutral-500 mt-1">{(post.excerpt && post.excerpt.replace(/<\/?[^>]+(>|$)/g, "").slice(0, 200)) || ""}</div>
+                <div className="text-sm text-neutral-500 mt-1">{(post.excerpt && post.excerpt.rendered.replace(/<\/?[^>]+(>|$)/g, "").slice(0, 200)) || ""}</div>
               </a>
             ))}
           </div>

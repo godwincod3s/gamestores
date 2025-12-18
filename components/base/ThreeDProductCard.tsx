@@ -56,11 +56,26 @@ export default function ThreeDProductCard({ product }: { product: any }) {
     try {
       setAdding(true);
       // Try server cart first (server stores cart in secure cookie)
-      const res = await fetch("/api/account/cart", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId: product.id, quantity: 1 }),
-      });
+      // const res = await fetch("/api/account/cart/add", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({ productId: product.id, quantity: 1 }),
+      // });
+
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_WP_API_URL}/wp-json/wc/store/cart/add-item`,
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id: product.id,
+            quantity: 1,
+          }),
+        }
+      );
 
       if (res.ok) {
         // optionally show a toast / visual cue; we'll briefly animate the button
