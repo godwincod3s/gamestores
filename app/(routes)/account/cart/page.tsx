@@ -39,7 +39,7 @@ export default function CartPage() {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_WP_API_URL}/wp-json/wc/store/cart`,
         {
-          method: "POST",
+          method: "GET",
           credentials: "include",
           headers: {
             "Content-Type": "application/json",
