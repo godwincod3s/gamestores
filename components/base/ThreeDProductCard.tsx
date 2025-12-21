@@ -81,6 +81,7 @@ export default function ThreeDProductCard({ product }: { product: any }) {
           headers: {
             "Content-Type": "application/json",
             "Cart-Token": localStorage.getItem("cart_token")!,
+            Cookie: localStorage.getItem("cart_token")!,
           },
           body: JSON.stringify({
             id: product.id,
